@@ -9,7 +9,7 @@ MERGE `moloco-data-prod.looker.campaign_summary_all` T
 USING (
 WITH title_lookup_table AS (
       SELECT
-          platform,
+        --   platform,
           advertiser_title,
           campaign_title,
           campaign_id,
@@ -27,7 +27,7 @@ WITH title_lookup_table AS (
           END AS campaign
          FROM `focal-elf-631.standard_digest.title_lookup_table`
          WHERE advertiser_id = advertiser_name
-         GROUP BY 1,2,3,4,5,6)
+         GROUP BY 1,2,3,4,5)
      , campaign_digest_merged_latest AS (
        SELECT 
           t1.*,
