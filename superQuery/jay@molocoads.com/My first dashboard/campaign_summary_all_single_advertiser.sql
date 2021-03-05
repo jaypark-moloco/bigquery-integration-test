@@ -345,7 +345,7 @@ WITH title_lookup_table AS (
         --AND ext.platform = ad_group.platform
         LEFT JOIN title_lookup_table title
         ON ext.campaign_id = title.campaign_id
-        AND ext.platform = title.platform
+        -- AND ext.platform = title.platform
         LEFT JOIN (
           SELECT 
             --platform_name,
